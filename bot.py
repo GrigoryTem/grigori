@@ -9,7 +9,6 @@ import time
 Client = discord.Client() #Initialise Client 
 client = commands.Bot(command_prefix = "?") #Initialise client bot
 
-greetings = ["hey", "hi", "hello"]
 
 @client.event 
 async def on_ready():
@@ -17,9 +16,6 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    for word in greetings:
-    if message.content == word:
-        await client.send_message(message.channel, "mafia - I can choose victim\nmaniac - hm what is victim?")
     if message.content == "mafia":
         await client.send_message(message.channel, "I dont care")
     if "Voting" in message.content:
